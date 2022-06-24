@@ -1,12 +1,16 @@
 # Device-driver
 
+steps to access Raspberrypi
 Steps to flash Raspbian OS onto sd card:
 
 On Host(ubuntu) :
 
  Open terminal
+
      $snap install rpi-imager
+
      $rpi-imager
+     
      Choose OS :  Raspberry Pi OS (other) => raspberry pi OS LITE 32-bit
      Choose storage : choose your sd card
      Open settings enable ssh and wlan provide details of hotspot
@@ -19,8 +23,11 @@ On Host(ubuntu) :
      sudo vim wpa_supplicant.conf
   write the file below code wpa_supplicant.conf save it
      $cd /media/<user-name>/boot
+
      $touch ssh
+
      $touch wpa_supplicant.conf
+
      $vim wpa_supplicant.conf
 
     Write the following code in wpa_supplicant.conf file and save it.
