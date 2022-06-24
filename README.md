@@ -45,12 +45,13 @@ Board will start booting
 both laptop and mobile has to be connect to same network to acess the ip adreess
 after compition of booting api connect to your wifi check your hotpot device manager
 open angry ip scanner scan 192.168.154.0 to 255 you can find rasberripi ip address copy it
+
 open terminal of rpi
 
  $ssh pi@ip addess
  enter password of rpi
 
- $sudo raspi-config
+ $sudo raspi-config ,
  Open interface enable ssh and vnc
 install vnc for linux open it enter ip adress you can access the remote display
 
