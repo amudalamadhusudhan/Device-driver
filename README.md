@@ -1,11 +1,10 @@
-
 # Device-driver
 
 Steps to flash Raspbian OS onto sd card:
+
 On Host(ubuntu) :
-Open terminal
-     $ sudo apt install rpi-imager
-           or
+
+ Open terminal
      $ snap install rpi-imager
      $ rpi-imager
      Choose OS :  Raspberry Pi OS (other) => raspberry pi OS LITE 32-bit
@@ -14,25 +13,25 @@ Open terminal
      Click on write and then click on yes - This will take some time.
 
  After completing flashing image plug out sd card and insert sd card again.
-     $ cd /media/<user-name>/rootfs
-     $ cd etc/wpa_supplicant/
-     $ sudo vim wpa_supplicant.conf
-     write the file below code wpa_supplicant.conf save it
+
+     cd /media/<user-name>/rootfs
+     cd etc/wpa_supplicant/
+     sudo vim wpa_supplicant.conf
+  write the file below code wpa_supplicant.conf save it
      $ cd  /media/<user-name>/boot
      $  touch ssh
      $ touch wpa_supplicant.conf
      $ vim wpa_supplicant.conf
 
-       Write the following code in wpa_supplicant.conf file and save it.
+    Write the following code in wpa_supplicant.conf file and save it.
 
-country=IN
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-network={
- ssid=”PrasadMob”
- psk=”prasad@08”
- key_mgmt=WPA-PSK
-
-}
+          country=IN
+           ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+           network={
+                    ssid="OnePlus"
+                    psk="123456789"
+                    key_mgmt=WPA-PSK
+                    }
 Plug out the SD card and insert into your raspberry pi board.
 Board will start booting
 both laptop and mobile has to be connect to same network to acess the ip adreess
