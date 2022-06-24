@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/moduleparameter/modpar.mod := { echo  /home/madhusudhan/Desktop/Device-driver/moduleparameter/modpar.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/moduleparameter/modpar.mod

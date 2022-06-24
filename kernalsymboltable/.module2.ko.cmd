@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.ko /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.o /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.mod.o;  true

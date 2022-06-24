@@ -28,11 +28,12 @@ MODULE_INFO(retpoline, "Y");
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0xd9726f80, "module_layout" },
+	{ 0x9f9684fc, "my_add" },
 	{ 0xc5850110, "printk" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
 
-MODULE_INFO(depends, "");
+MODULE_INFO(depends, "export");
 
 
-MODULE_INFO(srcversion, "1B4AEA06FA602DB7AC3FD7D");
+MODULE_INFO(srcversion, "B5732D6CFC9CC9843A2E44A");

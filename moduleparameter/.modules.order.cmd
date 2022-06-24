@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/moduleparameter/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/moduleparameter/modpar.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/moduleparameter/modules.order
