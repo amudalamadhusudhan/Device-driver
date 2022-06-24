@@ -10,8 +10,8 @@ On Host(ubuntu) :
      $snap install rpi-imager
 
      $rpi-imager
-     
-     Choose OS :  Raspberry Pi OS (other) => raspberry pi OS LITE 32-bit
+
+  Choose OS :  Raspberry Pi OS (other) => raspberry pi OS LITE 32-bit
      Choose storage : choose your sd card
      Open settings enable ssh and wlan provide details of hotspot
      Click on write and then click on yes - This will take some time.
@@ -21,6 +21,7 @@ On Host(ubuntu) :
      cd /media/<user-name>/rootfs
      cd etc/wpa_supplicant/
      sudo vim wpa_supplicant.conf
+
   write the file below code wpa_supplicant.conf save it
      $cd /media/<user-name>/boot
 
@@ -44,10 +45,13 @@ Board will start booting
 both laptop and mobile has to be connect to same network to acess the ip adreess
 after compition of booting api connect to your wifi check your hotpot device manager
 open angry ip scanner scan 192.168.154.0 to 255 you can find rasberripi ip address copy it
-open terminal-> $ ssh pi@ip addess
-enter password of rpi
-In rpi terminal->$ sudo raspi-config
-Open interface enable ssh and vnc
+open terminal of rpi
+
+ $ssh pi@ip addess
+ enter password of rpi
+
+ $sudo raspi-config
+ Open interface enable ssh and vnc
 install vnc for linux open it enter ip adress you can access the remote display
 
 # module
