@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/moduledemo/hello.mod := { echo  /home/madhusudhan/Desktop/Device-driver/moduledemo/hello.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/moduledemo/hello.mod
