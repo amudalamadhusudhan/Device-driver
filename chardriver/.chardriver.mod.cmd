@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/chardriver/chardriver.mod := { echo  /home/madhusudhan/Desktop/Device-driver/chardriver/chardriver.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/chardriver/chardriver.mod
