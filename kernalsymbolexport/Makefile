@@ -8,6 +8,7 @@ default:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 install:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install
+	depmod -a
 clean:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
 

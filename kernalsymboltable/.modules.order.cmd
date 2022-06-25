@@ -1,1 +1,0 @@
-cmd_/home/madhusudhan/Desktop/Device-driver/kernalsymboltable/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.ko;   echo /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/export.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/modules.order

@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/kernalsymbolexport/export.mod := { echo  /home/madhusudhan/Desktop/Device-driver/kernalsymbolexport/export.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/kernalsymbolexport/export.mod

@@ -1,5 +1,5 @@
 export.o: \
- /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/export.c \
+ /home/madhusudhan/Desktop/Device-driver/kernalsymbolexport/export.c \
  include/linux/compiler-version.h include/linux/kconfig.h \
  include/generated/autoconf.h include/linux/compiler_types.h \
  include/linux/compiler_attributes.h include/linux/compiler-gcc.h \
@@ -164,4 +164,4 @@ export.o: \
  include/asm-generic/error-injection.h include/linux/cfi.h \
  arch/x86/include/asm/module.h include/asm-generic/module.h \
  arch/x86/include/asm/orc_types.h \
- /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/am.h
+ /home/madhusudhan/Desktop/Device-driver/kernalsymbolexport/am.h

@@ -1,1 +1,0 @@
-cmd_/home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.mod := { echo  /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/kernalsymboltable/module2.mod
