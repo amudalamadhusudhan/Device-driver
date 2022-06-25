@@ -1,4 +1,4 @@
-obj-m:=chardriver.o
+obj-m := chardriver.o dynamicchar.o
 
 	KERNELDIR=/lib/modules/$(shell uname -r)/build
 

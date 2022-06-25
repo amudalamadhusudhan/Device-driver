@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/chardriver/dynamicchar.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/chardriver/dynamicchar.ko /home/madhusudhan/Desktop/Device-driver/chardriver/dynamicchar.o /home/madhusudhan/Desktop/Device-driver/chardriver/dynamicchar.mod.o;  true
