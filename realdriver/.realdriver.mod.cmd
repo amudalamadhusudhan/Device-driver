@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/realdriver/realdriver.mod := { echo  /home/madhusudhan/Desktop/Device-driver/realdriver/realdriver.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/realdriver/realdriver.mod

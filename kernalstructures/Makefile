@@ -1,4 +1,4 @@
-obj-m := cdev.o dynamicchar.o
+obj-m := cdev.o
 
 	KERNELDIR=/lib/modules/$(shell uname -r)/build
 

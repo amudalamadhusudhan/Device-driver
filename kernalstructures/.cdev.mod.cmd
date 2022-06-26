@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/kernalstructures/cdev.mod := { echo  /home/madhusudhan/Desktop/Device-driver/kernalstructures/cdev.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/kernalstructures/cdev.mod

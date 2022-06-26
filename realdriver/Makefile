@@ -1,4 +1,4 @@
-obj-m := cdev.o dynamicchar.o
+obj-m := realdriver.o
 
 	KERNELDIR=/lib/modules/$(shell uname -r)/build
 
