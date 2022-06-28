@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/ioctl/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/ioctl/ioctl.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/ioctl/modules.order

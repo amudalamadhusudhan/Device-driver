@@ -13,7 +13,7 @@ MODULE_ALIAS("madhu");        // Another name of the module
 
 // To initialize the module and load into kernel
 
-static int __init hello_init(void)
+static int hello_init(void)
 {
     printk(KERN_ALERT "\n Hello World new module\n");
 
@@ -22,7 +22,7 @@ static int __init hello_init(void)
 
 // To removes module from the kernel
 
-static void __exit hello_exit(void)
+static void hello_exit(void)
 {
     printk("\n bye module \n");
 }
