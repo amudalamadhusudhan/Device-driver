@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/waitQ/wait.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/waitQ/wait.ko /home/madhusudhan/Desktop/Device-driver/waitQ/wait.o /home/madhusudhan/Desktop/Device-driver/waitQ/wait.mod.o;  true
