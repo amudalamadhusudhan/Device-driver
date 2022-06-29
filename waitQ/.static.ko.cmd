@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/waitQ/static.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/waitQ/static.ko /home/madhusudhan/Desktop/Device-driver/waitQ/static.o /home/madhusudhan/Desktop/Device-driver/waitQ/static.mod.o;  true

@@ -1,1 +1,1 @@
-cmd_/home/madhusudhan/Desktop/Device-driver/waitQ/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/waitQ/wait.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/waitQ/modules.order
+cmd_/home/madhusudhan/Desktop/Device-driver/waitQ/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/waitQ/wait.ko;   echo /home/madhusudhan/Desktop/Device-driver/waitQ/static.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/waitQ/modules.order

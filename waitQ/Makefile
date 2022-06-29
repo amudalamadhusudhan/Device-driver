@@ -1,4 +1,4 @@
-obj-m :=wait.o
+obj-m :=wait.o static.o
 
 	KERNELDIR=/lib/modules/$(shell uname -r)/build
 
