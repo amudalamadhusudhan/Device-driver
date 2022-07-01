@@ -17,7 +17,7 @@ MODULE_AUTHOR("madhusudhan"); // Author name
 MODULE_DESCRIPTION("module"); // Description about the module
 MODULE_ALIAS("madhu");        // Another name of the module
 
-dev_t dev = 0; // major number minor dynamic allocation
+dev_t dev = 0; // major number minor dynamic allocation //
 static struct cdev char_cdev;
 // function prototypes
 static void __exit driverE(void);
