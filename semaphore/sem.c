@@ -1,3 +1,4 @@
+
 // Header files begins //////////////////////////////////////////////////////////////////
 #include <linux/init.h>   // Required header for initialization and clean up funtionalities
 #include <linux/module.h> // This header contain the necessary stuff for the module
@@ -7,13 +8,8 @@
 #include <linux/types.h>
 #include <linux/device.h>
 #include <linux/cdev.h>
-
+#include <linux/uaccess.h>
 // Header files ends //////////////////////////////////////////////////////////////////
-
-MODULE_LICENSE("GPL");        // tells that module bears free module
-MODULE_AUTHOR("madhusudhan"); // Author name
-MODULE_DESCRIPTION("module"); // Description about the module
-MODULE_ALIAS("madhu");        // Another name of the module
 
 dev_t dev = 0; // major number minor dynamic allocation //
 static struct cdev char_cdev;
@@ -89,3 +85,8 @@ static void __exit driverE(void)
 
 module_init(driverI); // Module Initialization
 module_exit(driverE); // Module De-Initialization
+
+MODULE_LICENSE("GPL");        // tells that module bears free module
+MODULE_AUTHOR("madhusudhan"); // Author name
+MODULE_DESCRIPTION("module"); // Description about the module
+MODULE_ALIAS("madhu");        // Another name of the module
