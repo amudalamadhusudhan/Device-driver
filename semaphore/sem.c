@@ -45,14 +45,14 @@ static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t
 {
     printk("sem driver read function called\n");
     int r;
-    r = copy_to_user(buf, &op_result, size);
+    r = copy_to_user((char *)buf, &op_result, sizeof(op_result));
     if (r == 0)
     {
         printk("\n sucuss in reading data from thr kernal to usr\n");
 
         printk("\n sucuss in reading data from thr kernal to usr %d\n", op_result);
         up(&my_sema);
-        return size;
+        return len;
     }
     else
     {
@@ -100,9 +100,10 @@ static int __init driverI(void)
     printk(KERN_INFO "\n major =%d minor=%d\n", MAJOR(dev), MINOR(dev));
 
     // creating cdev structure;
+  
     cdev_init(&char_cdev, &fops);
     // adding char driver to the system
-    if ((cdev_add(&char_cdev, dev, 1)) < 0)
+    if ((cdev_add(&char_cdev, dev, 3)) < 0)
     {
         pr_err("cannot add the device to the system");
     }

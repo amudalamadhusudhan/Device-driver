@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/semaphore/sem.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/semaphore/sem.ko /home/madhusudhan/Desktop/Device-driver/semaphore/sem.o /home/madhusudhan/Desktop/Device-driver/semaphore/sem.mod.o;  true
