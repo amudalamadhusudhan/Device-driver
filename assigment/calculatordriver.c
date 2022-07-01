@@ -15,7 +15,7 @@
 dev_t dev; // major number minor dynamic allocation //
 static struct cdev char_cdev;
 struct semaphore my_sema;
-unsigned int op_result;
+unsigned int add, sub, mul, div;
 // function prototypes
 static void __exit driverE(void);
 static int __init driverI(void);
@@ -33,57 +33,60 @@ static struct file_operations fops = {
 };
 static int char_open(struct inode *inode, struct file *file)
 {
-    pr_info("sem driver open function called\n");
+    pr_info("calc open function called\n");
     return 0;
 }
 static int char_release(struct inode *inode, struct file *file)
 {
-    pr_info("sem driver realease function called\n");
+    pr_info("calc realease function called\n");
     return 0;
 }
 static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t *off)
 {
-    printk("sem driver read function called\n");
-    int r;
-    r = copy_to_user((char *)buf, &op_result, sizeof(op_result));
-    if (r == 0)
+    if (copy_to_user((char *)buf, &add, sizeof(add)) &&
+        copy_to_user((char *)buf, &sub, sizeof(sub)) &&
+        copy_to_user((char *)buf, &mul, sizeof(mul)) &&
+        copy_to_user((char *)buf, &div, sizeof(div)) != 0)
     {
-        printk("\n sucuss in reading data from the kernal to usr\n");
-
-        printk("\n sucuss in reading data from the kernal to usr %d\n", op_result);
-        up(&my_sema);
-        return len;
+        pr_err("calc data read error\n");
     }
     else
     {
-        printk(" errot in reading data from  kernal to usr\n");
-        return -1;
+        printk("sucuss of reading calc driver read done ...\n");
+        printk("\n calc add_read  %d\n", add);
+        printk("\n calc sub_read  %d\n", sub);
+        printk("\n calc mul_read  %d\n", mul);
+        printk("\n calc div_read  %d\n", div);
+
+        return len;
     }
+    return 0;
 
     return 0;
 }
 static ssize_t char_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 {
-    down_trylock(&my_sema);
-    printk("\nsem driver write function called\n");
     int kbuff[2];
-    int r, n1, n2;
-    r = copy_from_user((char *)kbuff, (char *)buf, sizeof(kbuff));
-    if (r == 0)
+    int n1, n2;
+    if (copy_from_user((char *)kbuff, (char *)buf, sizeof(kbuff)) != 0)
+    {
+        pr_err("data write error\n");
+    }
+    else
     {
         printk("success in writing from the user to kernal\n");
         n1 = kbuff[0];
         n2 = kbuff[1];
-        op_result = n1 + n2;
-        printk("success in writing from the user to kernal result =%d\n", op_result);
+        add = n1 + n2;
+        sub = n1 - n2;
+        mul = n1 * n2;
+        div = n1 / n2;
+        printk("success in writing from the user to kernal result =%d\n", add);
+        printk("success in writing from the user to kernal result =%d\n", sub);
+        printk("success in writing from the user to kernal result =%d\n", mul);
+        printk("success in writing from the user to kernal result =%d\n", div);
         return len;
     }
-    else
-    {
-        printk("error in writing data from user to kernal");
-        return -1;
-    }
-
     return 0;
 }
 
@@ -91,8 +94,8 @@ static ssize_t char_write(struct file *filp, const char __user *buf, size_t len,
 
 static int __init driverI(void)
 {
-    alloc_chrdev_region(&dev, 0, 3, "sem char dynamic driver");
-    if ((alloc_chrdev_region(&dev, 0, 3, "sem char  dynamic driver")) < 0)
+    alloc_chrdev_region(&dev, 0, 4, "calc dynamic driver");
+    if ((alloc_chrdev_region(&dev, 0, 4, "calc  dynamic driver")) < 0)
     {
         printk(KERN_ALERT "sem driver inserted unsussfuly\n");
         return -1;
@@ -103,12 +106,11 @@ static int __init driverI(void)
 
     cdev_init(&char_cdev, &fops);
     // adding char driver to the system
-    if ((cdev_add(&char_cdev, dev, 3)) < 0)
+    if ((cdev_add(&char_cdev, dev, 4)) < 0)
     {
-        pr_err("cannot add the device to the system");
+        pr_err("cannot the device to the system");
     }
-    sema_init(&my_sema, 1);
-    printk(KERN_ALERT "sema char device driver inserted successfuly\n");
+    printk(KERN_ALERT "calc device driver inserted successfuly\n");
     return 0; // return 0 for sucessfull compilation
 }
 
@@ -118,7 +120,7 @@ static void __exit driverE(void)
 {
     cdev_del(&char_cdev);
     unregister_chrdev_region(dev, 1);
-    printk(KERN_ALERT "\n sema char  dynamic device driver removed successfully\n");
+    printk(KERN_ALERT "\n calc dynamic device driver removed successfully\n");
 }
 
 module_init(driverI); // Module Initialization
