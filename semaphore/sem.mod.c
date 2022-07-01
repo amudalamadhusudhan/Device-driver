@@ -37,7 +37,7 @@ __used __section("__versions") = {
 	{ 0x6b10bee1, "_copy_to_user" },
 	{ 0xc959d152, "__stack_chk_fail" },
 	{ 0x13c49cc2, "_copy_from_user" },
-	{ 0x6626afca, "down" },
+	{ 0x6bd0e573, "down_interruptible" },
 	{ 0xc5850110, "printk" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
@@ -45,4 +45,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "D1F5F4B7E62E4DA0069BE39");
+MODULE_INFO(srcversion, "31D3898871CDB4AD97DAB4C");

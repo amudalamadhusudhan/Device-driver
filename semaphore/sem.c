@@ -64,7 +64,7 @@ static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t
 }
 static ssize_t char_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 {
-    down(&my_sema);
+    down_interruptible(&my_sema);
     printk("\nsem driver write function called\n");
     int kbuff[2];
     int r, n1, n2;
