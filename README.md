@@ -67,7 +67,7 @@ linux:~#dmesg
 
 linux:~#lsmod
 
-linux:~#rmmodhello
+linux:~#rmmod hello
  
 device file creation-> sudo  mknod 777 -m /dev/drivername c majorno minorno 
 
