@@ -6,8 +6,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #define size 1024
-int8_t write_buf[size];
-int8_t read_buf[size];
+char write_buf[size];
+char read_buf[size];
 int main()
 {
     int fd;
@@ -30,14 +30,14 @@ int main()
         case 1:
             printf("enter the string write into driver \n");
             scanf("%s", write_buf);
-            write(fd, write_buf, strlen(write_buf) + 1);
-            printf("done\n");
+            write(fd, write_buf, sizeof(write_buf));
+            printf("writing done\n");
             break;
         case 2:
             printf("reading data \n");
-            read(fd, write_buf, size);
+            read(fd, read_buf, sizeof(read_buf));
             printf("done\n");
-            printf("data = %s\n\n", write_buf);
+            printf("data = %s\n", read_buf);
             break;
         case 3:
             close(fd);

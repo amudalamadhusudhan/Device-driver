@@ -1,1 +1,0 @@
-cmd_/home/madhusudhan/Desktop/Device-driver/semaphore/Module.symvers := sed 's/\.ko$$/\.o/' /home/madhusudhan/Desktop/Device-driver/semaphore/modules.order | scripts/mod/modpost -m -a  -o /home/madhusudhan/Desktop/Device-driver/semaphore/Module.symvers -e -i Module.symvers   -T -

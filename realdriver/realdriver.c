@@ -1,5 +1,3 @@
-/* Hello World Program */
-
 // Header files begins //////////////////////////////////////////////////////////////////
 #include <linux/init.h>   // Required header for initialization and clean up funtionalities
 #include <linux/module.h> // This header contain the necessary stuff for the module
@@ -12,24 +10,19 @@
 #include <linux/uaccess.h>
 #include <linux/slab.h>
 
-#define mem_size 1024;
 // Header files ends //////////////////////////////////////////////////////////////////
-
-MODULE_LICENSE("GPL");        // tells that module bears free module
-MODULE_AUTHOR("madhusudhan"); // Author name
-MODULE_DESCRIPTION("module"); // Description about the module
-MODULE_ALIAS("madhu");        // Another name of the module
+#define mem_size 1024
 
 dev_t dev = 0; // major number minor dynamic allocation
 static struct cdev char_cdev;
-uint8_t *kbuf;
+char kbuf[mem_size];
 // function prototypes
 static void __exit driverE(void);
 static int __init driverI(void);
 static int char_open(struct inode *inode, struct file *file);
 static int char_release(struct inode *inode, struct file *file);
 static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t *off);
-static ssize_t char_write(struct file *filp, const char *buf, size_t len, loff_t *off);
+static ssize_t char_write(struct file *filp, const char __user *buf, size_t len, loff_t *off);
 static struct file_operations fops = {
     .owner = THIS_MODULE,
     .write = char_write,
@@ -40,33 +33,42 @@ static struct file_operations fops = {
 };
 static int char_open(struct inode *inode, struct file *file)
 {
-    pr_info("char driver open function called\n");
+    printk("char driver open function called\n");
     return 0;
 }
 static int char_release(struct inode *inode, struct file *file)
 {
-    pr_info("char driver realease function called\n");
+    printk("char driver realease function called\n");
     return 0;
 }
 static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t *off)
 {
-    if (copy_to_user(buf, kbuf, mem_size))
+    if (copy_to_user((char *)buf, kbuf, sizeof(kbuf)) != 0)
     {
         pr_err("data read error\n");
     }
-    pr_info("char driver read done ...\n");
-    return mem_size;
+    else
+    {
+        pr_info("sucuss of reading char driver read done ...\n");
+        printk("succuss in reading data from kernal to user =%s\n", kbuf);
+        return len;
+    }
+    return 0;
 }
-static ssize_t char_write(struct file *filp, const char *buf, size_t len, loff_t *off)
+static ssize_t char_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 {
 
-    if (copy_from_user(kbuf, buf, len))
+    if (copy_from_user((char *)kbuf, (char *)buf, sizeof(kbuf)) != 0)
     {
         pr_err("data write error\n");
     }
-    pr_info("char driver write done ...\n");
-    return len;
-}
+    else
+    {
+        pr_info("sucucess char driver write done ...\n");
+        printk("success in writing from the user to kernal result =%s\n", kbuf);
+        return len;
+    }
+    return 0;
 }
 
 // To initialize the module and load into kernel
@@ -88,11 +90,7 @@ static int __init driverI(void)
     {
         pr_err("cannot add the device to the system");
     }
-    if ((kbuf = kmalloc(mem_size, GFP_KERNAL)) == 0)
-    {
-        pr_err("cannot allocate the memory");
-    }
-    strcpy(kbuf, "madhusudhan");
+
     printk(KERN_ALERT "char device driver inserted successfuly\n");
     return 0; // return 0 for sucessfull compilation
 }
@@ -107,5 +105,9 @@ static void __exit driverE(void)
     printk(KERN_ALERT "\n char  dynamic device driver removed successfully\n");
 }
 
-module_init(driverI); // Module Initialization
-module_exit(driverE); // Module De-Initialization
+module_init(driverI);         // Module Initialization
+module_exit(driverE);         // Module De-Initialization
+MODULE_LICENSE("GPL");        // tells that module bears free module
+MODULE_AUTHOR("madhusudhan"); // Author name
+MODULE_DESCRIPTION("module"); // Description about the module
+MODULE_ALIAS("madhu");        // Another name of the module

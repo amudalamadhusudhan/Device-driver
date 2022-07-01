@@ -1,7 +1,7 @@
 
 // Header files begins //////////////////////////////////////////////////////////////////
-#include <linux/init.h>   // Required header for initialization and clean up funtionalities
-#include <linux/module.h> // This header contain the necessary stuff for the module
+#include <linux/init.h>
+#include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/kdev_t.h>
@@ -48,9 +48,9 @@ static ssize_t char_read(struct file *filp, char __user *buf, size_t len, loff_t
     r = copy_to_user((char *)buf, &op_result, sizeof(op_result));
     if (r == 0)
     {
-        printk("\n sucuss in reading data from thr kernal to usr\n");
+        printk("\n sucuss in reading data from the kernal to usr\n");
 
-        printk("\n sucuss in reading data from thr kernal to usr %d\n", op_result);
+        printk("\n sucuss in reading data from the kernal to usr %d\n", op_result);
         up(&my_sema);
         return len;
     }
@@ -75,7 +75,7 @@ static ssize_t char_write(struct file *filp, const char __user *buf, size_t len,
         n1 = kbuff[0];
         n2 = kbuff[1];
         op_result = n1 + n2;
-        printk("success in writing from the user to kernal reult =%d\n", op_result);
+        printk("success in writing from the user to kernal result =%d\n", op_result);
         return len;
     }
     else
@@ -100,7 +100,7 @@ static int __init driverI(void)
     printk(KERN_INFO "\n major =%d minor=%d\n", MAJOR(dev), MINOR(dev));
 
     // creating cdev structure;
-  
+
     cdev_init(&char_cdev, &fops);
     // adding char driver to the system
     if ((cdev_add(&char_cdev, dev, 3)) < 0)
