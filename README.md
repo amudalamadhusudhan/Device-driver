@@ -73,4 +73,5 @@ device file creation-> sudo  mknod 777 -m /dev/drivername c majorno minorno
 
 ![Screenshot from 2022-06-24 19-17-36](https://user-images.githubusercontent.com/105910992/175550909-ab254f2c-78b6-4d3e-b500-37240ce13cd9.png)
 ![Screenshot from 2022-06-25 19-39-23](https://user-images.githubusercontent.com/105910992/175831863-79ac4834-1f7f-4ba4-a434-ab2ac712fa90.png)
-
+# calc driver
+![Screenshot from 2022-07-02 00-01-29](https://user-images.githubusercontent.com/105910992/176952863-c8f266e3-1f0c-4736-a16e-e4edc82424f2.png)
