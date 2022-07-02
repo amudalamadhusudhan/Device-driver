@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/spinlock/modules.order := {   echo /home/madhusudhan/Desktop/Device-driver/spinlock/spin.ko; :; } | awk '!x[$$0]++' - > /home/madhusudhan/Desktop/Device-driver/spinlock/modules.order

@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/spinlock/spin.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/spinlock/spin.ko /home/madhusudhan/Desktop/Device-driver/spinlock/spin.o /home/madhusudhan/Desktop/Device-driver/spinlock/spin.mod.o;  true
