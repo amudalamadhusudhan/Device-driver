@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/timer/timer.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/timer/timer.ko /home/madhusudhan/Desktop/Device-driver/timer/timer.o /home/madhusudhan/Desktop/Device-driver/timer/timer.mod.o;  true
