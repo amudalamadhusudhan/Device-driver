@@ -55,58 +55,6 @@ open terminal of rpi
  Open interface enable ssh and vnc
 install vnc for linux open it enter ip adress you can access the remote display
 
-# Corss Compiler & Kernel Environment for rpi4
-Steps for cross compiling Kernel :
-On Host(Ubuntu) :
-Install Required dependencies :
-
-sudo apt install git bc bison flex libssl-dev make libc6-dev libncurses5-dev
-Install 32-bit Toolchain :
-
-sudo apt install crossbuild-essential-armhf
-Download / clone Kernel source
-
-mkdir rpi
-cd rpi
-git clone --depth=1 --branch rpi-5.15.y https://github.com/raspberrypi/linux
-cd linux
-Apply the config file of rpi4 :
-
-Check config file for your board(rpi4) using below command.
-ls arch/arm/configs
-Default config file for rpi4 is bcm2711_defconfig.
-Now apply config file using below command.
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2711_defconfig
-Build Kernel image & Kernel modules for rpi4 :
-
-make -j8 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules
-Result of above command :
-ls arch/arm/boot
-Zimage  # This is the result.
-Plug in your SD Card to your HOST PC(Ubuntu) :
-
-cp arch/arm/boot/zImage /media/<user_name of your PC>/boot
-Install modules onto rootfs partition (or "/") of SD Card
-
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=<path-to-sdcard-rootfs-partition> modules_install
-
-sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- modules_install  # It will install 5.15.45-v7l+ into "ls /lib/modules"
-Example in my PC :
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=/media/madhusudhan/rootfs modules_install
-Modules get install in rootfs/lib/modules path.
-Configuring config.txt to boot our new Kernel.
-
-cd /media/<user-name>/boot
-Open config.txt :
-vim config.txt
-Add below line at the end of the file and save file.
-kernel=zImage
-if ssh & "wpa_supplicant.conf" files are not in your boot partition then follow steps-2 of flashing raspbian OS.
-
-Plug out your SD Card and insert into your Raspberry pi board.
-
-Board will start booting and access it trough ssh pi@ipadress
-
 # module
 
 linux:~$make
