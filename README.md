@@ -71,6 +71,21 @@ linux:~#rmmod hello
  
 device file creation-> sudo  mknod 777 -m /dev/drivername c majorno minorno 
 
+ Makefile
+ 
+obj-m := filename.o
+
+	KERNELDIR=/lib/modules/$(shell uname -r)/build
+
+	PWD:=$(shell pwd)
+
+default:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+install:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install
+clean:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
+
 ![Screenshot from 2022-06-24 19-17-36](https://user-images.githubusercontent.com/105910992/175550909-ab254f2c-78b6-4d3e-b500-37240ce13cd9.png)
 ![Screenshot from 2022-06-25 19-39-23](https://user-images.githubusercontent.com/105910992/175831863-79ac4834-1f7f-4ba4-a434-ab2ac712fa90.png)
 # calc driver
