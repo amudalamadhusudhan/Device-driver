@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/cal/cal.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/cal/cal.ko /home/madhusudhan/Desktop/Device-driver/cal/cal.o /home/madhusudhan/Desktop/Device-driver/cal/cal.mod.o;  true
