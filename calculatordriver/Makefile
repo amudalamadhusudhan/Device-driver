@@ -1,4 +1,4 @@
-obj-m := cal.o
+obj-m := calc.o
 
 	KERNELDIR=/lib/modules/$(shell uname -r)/build
 

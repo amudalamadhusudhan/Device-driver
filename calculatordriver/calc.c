@@ -72,7 +72,7 @@ static long char_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
         else if (oper == 2)
             value = value1 - value2;
         else if (oper == 3)
-            value = value1 * value2;
+            value = (value1 * value2);
         else if (oper == 4)
             value = value1 / value2;
         else
@@ -84,7 +84,7 @@ static long char_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
     count += 1;
     if (count == 3)
         count = 0;
-
+    printk("calculation sucssfull result = %d\n", value);
     return 0;
 }
 

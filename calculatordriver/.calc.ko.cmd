@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.ko /home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.o /home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.mod.o;  true

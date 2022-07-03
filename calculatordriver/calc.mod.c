@@ -33,8 +33,8 @@ __used __section("__versions") = {
 	{ 0xe3ec2f2b, "alloc_chrdev_region" },
 	{ 0x6091b333, "unregister_chrdev_region" },
 	{ 0x1bcee483, "cdev_del" },
-	{ 0x13c49cc2, "_copy_from_user" },
 	{ 0x6b10bee1, "_copy_to_user" },
+	{ 0x13c49cc2, "_copy_from_user" },
 	{ 0xc5850110, "printk" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
@@ -42,4 +42,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "F7A8B31BAF3C4740A7BAF79");
+MODULE_INFO(srcversion, "2449B4B13D8A17EA94955BC");

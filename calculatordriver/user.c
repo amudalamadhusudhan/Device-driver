@@ -13,26 +13,21 @@
 int main()
 {
     int num;
-    int fd;
+    int fd, fd1;
     int32_t value, number1, number2, output, operation;
     printf("\n*************************************\n");
 
     printf("\nOpening Driver\n");
 
-    fd = open("/dev/etx_device", O_RDWR);
+    fd = open("/dev/calculat", O_RDWR);
     if (fd < 0)
     {
         printf("Cannot open device file ...\n");
         return 0;
     }
 
-    printf("Operation to perform\n\n");
-    printf("\
-        1. Add \n \
-        2. Subtract \n \
-        3. Multiply \n \
-        4. Divide \n\n\n ");
-
+    printf("Operation to perform\n");
+    printf("\n 1.addition \n 2.subraction \n 3.multiplication\n4.division\n");
     scanf("%d", &num);
     if (num > 4 && num < 1)
     {
@@ -50,11 +45,18 @@ int main()
 
     ioctl(fd, WR_VALUE, (int32_t *)&number1);
     ioctl(fd, WR_VALUE, (int32_t *)&number2);
+    fd1 = open("/dev/calculat", O_RDWR);
+    if (fd < 0)
+    {
+        printf("Cannot open device file ...\n");
+        return 0;
+    }
 
     printf("Reading value from driver \n");
-    ioctl(fd, RD_VALUE, (int32_t *)&value);
+    ioctl(fd1, RD_VALUE, (int32_t *)&value);
     printf("value is %d\n", value);
 
     printf("closing driver\n");
     close(fd);
+    close(fd1);
 }

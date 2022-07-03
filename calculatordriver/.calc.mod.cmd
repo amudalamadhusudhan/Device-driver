@@ -1,0 +1,1 @@
+cmd_/home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.mod := { echo  /home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.o;  echo; } > /home/madhusudhan/Desktop/Device-driver/calculatordriver/calc.mod
