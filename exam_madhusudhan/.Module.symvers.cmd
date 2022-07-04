@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/Desktop/220350130004_MADHUSUDHAN/Module.symvers := sed 's/\.ko$$/\.o/' /home/ubuntu/Desktop/220350130004_MADHUSUDHAN/modules.order | scripts/mod/modpost -m -a  -o /home/ubuntu/Desktop/220350130004_MADHUSUDHAN/Module.symvers -e -i Module.symvers   -T -
