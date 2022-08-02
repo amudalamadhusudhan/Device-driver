@@ -1,0 +1,1 @@
+cmd_/home/pi/EDD/static_alloc_driver/driver.ko := ld -r -EL --build-id=sha1  -T scripts/module.lds -o /home/pi/EDD/static_alloc_driver/driver.ko /home/pi/EDD/static_alloc_driver/driver.o /home/pi/EDD/static_alloc_driver/driver.mod.o;  true

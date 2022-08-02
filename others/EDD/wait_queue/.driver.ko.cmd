@@ -1,0 +1,1 @@
+cmd_/home/pi/EDD/wait_queue/driver.ko := ld -r -EL --build-id=sha1  -T scripts/module.lds -o /home/pi/EDD/wait_queue/driver.ko /home/pi/EDD/wait_queue/driver.o /home/pi/EDD/wait_queue/driver.mod.o;  true
